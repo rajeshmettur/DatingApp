@@ -44,3 +44,11 @@ D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\DATINGAPP-SPA\tsconfi
 D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\DATINGAPP-SPA\tsconfig.json
 D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\DATINGAPP-SPA\tsconfig.spec.json
 D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\DATINGAPP-SPA\tslint.json
+D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\Working\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
