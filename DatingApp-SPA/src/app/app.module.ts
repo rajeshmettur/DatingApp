@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
-import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
@@ -30,6 +30,7 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import {TimeAgoPipe} from 'time-ago-pipe';
+import { ListResolver } from './_resolvers/list.resolver';
 
 export class CustomHammerConfig extends HammerGestureConfig  {
    overrides = {
@@ -68,6 +69,8 @@ export function tokenGetter() {
       BrowserAnimationsModule,
       BsDatepickerModule.forRoot(),
       BsDropdownModule.forRoot(),
+      PaginationModule.forRoot(),
+      ButtonsModule.forRoot(),
       TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
@@ -87,6 +90,7 @@ export function tokenGetter() {
       MemberDetailResolver,
       MemberEditResolver,
       MemberListResolver,
+      ListResolver,
       UserServiceService,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
    ],

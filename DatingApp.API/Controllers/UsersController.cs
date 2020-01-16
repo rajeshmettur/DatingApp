@@ -25,12 +25,48 @@ namespace DatingApp.API.Controllers
             this._mapper = mapper;
             this._repo = repo;
         }
+ 
+        [HttpPost("{id}/like/{recipentId}")]
+        public async Task<IActionResult> LikeUser(int id, int recipentId)
+        {
+             if(id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value)) 
+                 return Unauthorized();
+
+             var like = await _repo.GetLike(id , recipentId);
+   
+             if(like != null)
+                return BadRequest("You already like this User");
+
+             if(await _repo.GetUser(recipentId) == null)
+                return NotFound();
+
+             like = new Like {
+                LikerId = id,
+                LikeeId = recipentId
+             };
+
+            _repo.Add<Like>(like);
+
+            if(await _repo.SaveAll())
+              return Ok();
+ 
+            return BadRequest("Failed to like User");
+       }
+
 
         [HttpGet]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers([FromQuery]UserParams userParams)
         {
-            var users = await _repo.GetUsers();
+            var currentUserId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var userFromRepo = await _repo.GetUser(currentUserId);
+            userParams.UserId = currentUserId;       
+            if(string.IsNullOrEmpty(userParams.Gender))
+            {
+                userParams.Gender = userFromRepo.Gender == "male" ? "female" : "male";
+            }
+            var users = await _repo.GetUsers(userParams);
             var userToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
+            Response.AddPagination(users.CurrentPage, users.PageSize, users.TotalCount, users.TotalPages);
             return Ok(userToReturn);
         }
 

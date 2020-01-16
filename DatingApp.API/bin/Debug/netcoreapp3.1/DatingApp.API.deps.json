@@ -26,6 +26,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
           "CloudinaryDotNet": "1.9.1",
+          "FluentApiNet": "1.0.2",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.0",
           "Microsoft.EntityFrameworkCore": "3.1.0",
@@ -366,6 +367,37 @@
         },
         "compile": {
           "lib/netstandard1.3/CloudinaryDotNet.dll": {}
+        }
+      },
+      "EntityFramework/6.2.0": {
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.61023.0"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.61023.0"
+          }
+        },
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {},
+          "lib/net45/EntityFramework.dll": {}
+        }
+      },
+      "FluentApiNet/1.0.2": {
+        "dependencies": {
+          "EntityFramework": "6.2.0",
+          "Z.EntityFramework.Plus.EF6": "1.8.19"
+        },
+        "runtime": {
+          "lib/net461/FluentApiNet.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net461/FluentApiNet.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.0": {
@@ -1319,6 +1351,17 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
+        }
+      },
+      "Z.EntityFramework.Plus.EF6/1.8.19": {
+        "runtime": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {
+            "assemblyVersion": "1.8.19.0",
+            "fileVersion": "1.8.19.0"
+          }
+        },
+        "compile": {
+          "lib/net45/Z.EntityFramework.Plus.EF6.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3042,6 +3085,20 @@
       "path": "cloudinarydotnet/1.9.1",
       "hashPath": "cloudinarydotnet.1.9.1.nupkg.sha512"
     },
+    "EntityFramework/6.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ptGyXOf26qLrtn+2doAmylIlCxOnBJANwlyyLrXDmqIk9O18IzLWHyxDwwAyhgXkxmbiaA0WNpRy67WRReInBw==",
+      "path": "entityframework/6.2.0",
+      "hashPath": "entityframework.6.2.0.nupkg.sha512"
+    },
+    "FluentApiNet/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-90Y4w7I67Tg797C+qV/tjSbnJGwzLwBglfAo+ElMYpWbvDlB6AhTs3aOC26kyhJo+YLevuSokggCAIevYS/7UQ==",
+      "path": "fluentapinet/1.0.2",
+      "hashPath": "fluentapinet.1.0.2.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.0": {
       "type": "package",
       "serviceable": true,
@@ -3734,6 +3791,13 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Z.EntityFramework.Plus.EF6/1.8.19": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LNv2Fpt7Snt0+RgRm/WQUiQ4G+rX+2it5izFGs702p7QNz+LVVvK2CHNELSv2MZ7MTqWnGkAf8t0sJLaKNvmbw==",
+      "path": "z.entityframework.plus.ef6/1.8.19",
+      "hashPath": "z.entityframework.plus.ef6.1.8.19.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",
