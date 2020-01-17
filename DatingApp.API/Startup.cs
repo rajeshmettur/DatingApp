@@ -92,14 +92,17 @@ namespace DatingApp.API
 
             app.UseCors(x=> x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()); 
 
-            app.UseAuthentication();
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
 
-             app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
              
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapFallbackToController("Index", "Fallback");
             });
         }
     }

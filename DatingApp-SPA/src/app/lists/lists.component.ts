@@ -23,6 +23,8 @@ export class ListsComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.user = data.users.result;
       this.pagination = data.users.pagination;
+      this.likesParam = 'Likees';
+      this.loadUsers();
     });
   }
 
@@ -35,7 +37,6 @@ export class ListsComponent implements OnInit {
 loadUsers() {
     this.userService.getUsers(this.pagination.currentPage, this.pagination.itemsPerPage, null, this.likesParam).
     subscribe((res: PaginatedResult<User[]>) => {
-      console.log(this.likesParam);
       this.user = res.result;
       this.pagination = res.pagination;
     }, error => {
